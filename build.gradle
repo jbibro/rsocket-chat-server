@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'com.google.cloud.tools.jib' version '1.0.0'
+}
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('io.rsocket:rsocket-core:0.11.15')
+    implementation('io.rsocket:rsocket-transport-netty:0.11.15')
+    compileOnly('org.projectlombok:lombok:1.18.4')
+    implementation('ch.qos.logback:logback-classic:1.3.0-alpha4')
+}
+
+jib {
+    container {
+        mainClass = 'com.github.jbibro.rsocketchat.server.ChatServer'
+        ports = ['8080']
+    }
+}
