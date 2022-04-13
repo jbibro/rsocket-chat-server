@@ -35,9 +35,6 @@ jobs:
         language: [ 'java' ]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
         # Learn more about CodeQL language support at https://git.io/codeql-language-support
-        
-    container:
-      image: codeql-container:f0f91db
       
     steps:
     - name: Checkout repository
